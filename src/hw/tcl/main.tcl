@@ -16,6 +16,8 @@ proc setSources {} {
 
   variable Sources 
   lappend Sources {"../hdl/top.vhd" "VHDL 2008"} 
+  lappend Sources {"../hdl/bpm_package.vhd" "VHDL 2008"} 
+
 
   lappend Sources {"../cstr/pins.xdc"  "XDC"}
 
