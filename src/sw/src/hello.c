@@ -49,6 +49,15 @@
 #include "platform.h"
 #include "xil_printf.h"
 
+/* FreeRTOS includes */
+#include "FreeRTOS.h"
+#include "task.h"
+#include "queue.h"
+#include "timers.h"
+
+#include "lwip/init.h"
+
+
 
 int main()
 {

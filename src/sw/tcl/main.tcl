@@ -61,7 +61,12 @@ proc doOnCreate {} {
   #variable Config
   #variable Sources
   #addSources Sources
-
+  fwfwk::printInfo "doOnCreate in src/sw/main.tcl - Adding LWIP 211"
+  bsp setlib -name lwip211
+  bsp config api_mode "SOCK_API"
+  bsp write
+  bsp reload
+  bsp regenerate
   #if {[info exists ::fwfwk::ConsoleUart]} {
   #  fwfwk::printInfo "ConsoleUart = ${::fwfwk::ConsoleUart}"
   #  set Config(ConsoleUart) [string toupper ${::fwfwk::ConsoleUart}]
