@@ -65,9 +65,9 @@ proc doOnCreate {} {
 
   #domain active {app_domain}
   
-  #bsp config total_heap_size "1048576"
-  #bsp config minimal_stack_size "1024"
-  #bsp config max_task_name_len "32"
+  bsp config total_heap_size "1048576"
+  bsp config minimal_stack_size "1024"
+  bsp config max_task_name_len "32"
 
   bsp setlib -name lwip211
   bsp config api_mode "SOCKET_API"
