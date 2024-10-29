@@ -17,9 +17,14 @@ proc setSources {} {
   variable Sources 
   lappend Sources {"../hdl/top.vhd" "VHDL 2008"} 
   lappend Sources {"../hdl/bpm_package.vhd" "VHDL 2008"} 
-
+  lappend Sources {"../hdl/adc_ltc2195.vhd" "VHDL 2008"} 
+  lappend Sources {"../hdl/adc_s2p.vhd" "VHDL 2008"} 
+  lappend Sources {"../hdl/ltc2195_spi.vhd" "VHDL 2008"} 
+  lappend Sources {"../hdl/spi_ad9510.vhd" "VHDL 2008"} 
 
   lappend Sources {"../cstr/pins.xdc"  "XDC"}
+  lappend Sources {"../cstr/afepins.xdc"  "XDC"}
+  lappend Sources {"../cstr/timing.xdc"  "XDC"} 
 
 }
 
@@ -44,6 +49,7 @@ proc doOnCreate {} {
   set_property default_lib      xil_defaultlib               [current_project]
    
   source ${TclPath}/system.tcl
+  source ${TclPath}/adc_fco_phaseshift.tcl
 
   addSources "Sources" 
 

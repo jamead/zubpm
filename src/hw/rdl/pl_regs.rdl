@@ -75,12 +75,71 @@ addrmap pl_regs {
     field {} data[32] = `C_PRJ_TIMESTAMP;
   } PRJ_TIMESTAMP @0x1C;
 
-  reg {
+ 
+ 
+reg {
+    desc="AD9510 PLL";
+    default sw = rw;
+    default hw = rw;
+    default swmod=true;
+    field {} data[32];
+  } pll_spi @0x28;
+ 
+ 
+
+reg {
+    desc="ADC IDLY value";
+    default sw = rw;
+    default hw = rw;
+    default swacc=true;
+    default swmod=true;
+    field {} data[9];
+  } adc_idlyval @0x30;
+
+
+reg {
+    desc="ADC IDLY strobe";
+    default sw = rw;
+    default hw = rw;
+    default swacc=true;
+    default swmod=true;
+    field {} data[16];
+  } adc_idlystr @0x34;
+
+
+reg {
+    desc="ADC FCO MMCM dly strobe";
+    default sw = rw;
+    default hw = rw;
+    default swacc=true;
+    default swmod=true;
+    field {} data[2];
+  } adc_mmcmdlystr @0x38;
+
+
+
+reg {
+    desc="ADC SPI access";
+    default sw = rw;
+    default hw = rw;
+    default swacc=true;
+    default swmod=true;
+    field {} data[32];
+  } adc_spi @0x48;
+
+
+ reg {
     desc="FP LED outputs";
     default sw = rw;
     default hw = r;
     field {} val[8];
-  } FP_LEDS;
+  } FP_LEDS @0x100;
+
+
+
+
+
+
 
 
 };
